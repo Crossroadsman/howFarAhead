@@ -15,7 +15,7 @@
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
+                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -54,13 +54,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hcm-yF-kWN">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hcm-yF-kWN">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="9pv-A4-QxB" id="nNb-xj-UHr"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O63-Ku-Ukc">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O63-Ku-Ukc">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="9pv-A4-QxB" id="znz-A2-mlD"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="—" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aYr-ce-Okf">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -71,17 +77,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MCo-8v-W3k">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="9pv-A4-QxB" id="A7U-Ui-Avv"/>
+                                </connections>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8tp-VJ-2EX">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="184" id="Xke-Tw-gzE"/>
+                                    <constraint firstAttribute="height" constant="56" id="y39-QP-Jch"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <state key="normal" title="Compute!"/>
                                 <connections>
                                     <action selector="computeButtonWasPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="dxg-pU-AA7"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MCo-8v-W3k">
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -104,7 +117,6 @@
                             <constraint firstItem="aYr-ce-Okf" firstAttribute="baseline" secondItem="uow-4c-7Pd" secondAttribute="baseline" id="LkM-jH-viS"/>
                             <constraint firstItem="uow-4c-7Pd" firstAttribute="width" secondItem="sxs-nS-uPS" secondAttribute="width" id="MiY-6z-U8z"/>
                             <constraint firstItem="O63-Ku-Ukc" firstAttribute="width" secondItem="MCo-8v-W3k" secondAttribute="width" id="Rhp-jp-5pg"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="8tp-VJ-2EX" secondAttribute="leading" id="SEE-xh-5U6"/>
                             <constraint firstItem="icB-eE-RuJ" firstAttribute="baseline" secondItem="uow-4c-7Pd" secondAttribute="baseline" id="T6g-ju-4pd"/>
                             <constraint firstAttribute="leadingMargin" secondItem="vTZ-5Q-oLg" secondAttribute="leading" id="Uj7-wq-9a1"/>
                             <constraint firstItem="MCo-8v-W3k" firstAttribute="leading" secondItem="sxs-nS-uPS" secondAttribute="trailing" constant="8" id="Y1v-bm-1lO"/>
@@ -118,15 +130,17 @@
                             <constraint firstItem="aYr-ce-Okf" firstAttribute="height" secondItem="MCo-8v-W3k" secondAttribute="height" id="jWx-fv-6Mu"/>
                             <constraint firstItem="KXI-kz-DHW" firstAttribute="leading" secondItem="MCo-8v-W3k" secondAttribute="trailing" constant="8" id="nae-KR-Ebf"/>
                             <constraint firstItem="hcm-yF-kWN" firstAttribute="height" secondItem="MCo-8v-W3k" secondAttribute="height" id="oEf-pA-wBq"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="8tp-VJ-2EX" secondAttribute="trailing" id="oMQ-km-s0d"/>
+                            <constraint firstItem="8tp-VJ-2EX" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="orI-aU-MYz"/>
                             <constraint firstItem="KXI-kz-DHW" firstAttribute="baseline" secondItem="sxs-nS-uPS" secondAttribute="baseline" id="p8G-0g-fFm"/>
                             <constraint firstItem="sxs-nS-uPS" firstAttribute="top" secondItem="8Om-hO-hPu" secondAttribute="bottom" constant="45" id="pnt-MG-caY"/>
                             <constraint firstItem="hcm-yF-kWN" firstAttribute="baseline" secondItem="vTZ-5Q-oLg" secondAttribute="baseline" id="qJg-mh-4nc"/>
                             <constraint firstItem="icB-eE-RuJ" firstAttribute="width" secondItem="aPf-fm-Ind" secondAttribute="width" id="qP7-Sf-ab0"/>
                             <constraint firstItem="hcm-yF-kWN" firstAttribute="leading" secondItem="MCo-8v-W3k" secondAttribute="leading" id="qyw-Uu-euo"/>
                             <constraint firstItem="aYr-ce-Okf" firstAttribute="leading" secondItem="MCo-8v-W3k" secondAttribute="leading" id="vR4-AY-mF9"/>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="8tp-VJ-2EX" secondAttribute="bottom" constant="8" id="yyF-Jv-Eia"/>
                         </constraints>
+                        <connections>
+                            <action selector="userTappedBackground:" destination="9pv-A4-QxB" eventType="touchDown" id="t7C-WV-Tjo"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Distance" image="first" id="acW-dT-cKf" userLabel="Distance"/>
                     <connections>
@@ -138,7 +152,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241384"/>
+            <point key="canvasLocation" x="748.125" y="-321.12676056338029"/>
         </scene>
         <!--Time-->
         <scene sceneID="wg7-f3-ORb">
