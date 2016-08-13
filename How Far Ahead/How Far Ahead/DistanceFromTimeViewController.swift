@@ -28,7 +28,7 @@ class DistanceFromTimeViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var slowerTextField: UITextField!
     
-    // TODO: make the timeSincePassedTextField force a mm:ss format value
+    
     @IBOutlet weak var timeSincePassedTextField: UITextField!
     
     @IBOutlet weak var distanceTextField: UITextField!
@@ -64,9 +64,10 @@ class DistanceFromTimeViewController: UIViewController, UITextFieldDelegate {
         let hoursSincePassed = minutesSincePassed / 60
         
         let distance = netSpeed * hoursSincePassed
+        let roundedDistance = round(distance * 100) / 100
         
-        // TODO: tidy the string formatting of the output (round to 2DP?)
-        distanceTextField.text = String(distance)
+        // done: tidy the string formatting of the output (round to 2DP?)
+        distanceTextField.text = String(roundedDistance)
         
         
     }
